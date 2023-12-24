@@ -5,16 +5,20 @@ import AppContext from "./utils/context"
 import Header from "./pages/Header/Header"
 import Footer from "./pages/Footer/Footer"
 import "../index.scss"
+import Login from "./pages/Register/Login"
+import Cart from "./pages/Cart/Cart"
 function App() {
 
   return (
     <div>
     <BrowserRouter>
     <AppContext>
-    {/* <Header/> */}
+    <Header/>
     <Routes>
       <Route path="/" element={<Home/>}/>
-      <Route path="/product/:id" element={<SingleProduct/>}/>
+      <Route path="/product/:productId" element={<SingleProduct/>}/>
+      <Route path="/login" element={<Login></Login>}/>
+      <Route path="/cart" element={<Cart></Cart>}/>
     </Routes>
     <Footer/>
     </AppContext>

@@ -1,6 +1,11 @@
 import { CgShoppingCart } from "react-icons/cg";
 import "./SingleProduct.scss";
+import { useParams } from "react-router-dom";
+import useProduct from "../hooks/useProduct";
 const SingleProduct = () => {
+  const {productId} = useParams();
+  const [product] = useProduct(productId);
+  console.log(product)
   return (
     <div className='single-product-main-content'>
       <div className='layout'>
@@ -9,7 +14,7 @@ const SingleProduct = () => {
         <img src="" alt=""/>
       </div>
       <div className='right'>
-      <span className='name'>name</span>
+      <span className='name'>{product.name}</span>
       <span className=''>price</span>
       <span className='desc'>desc</span>
       <div className='cart-buttons'>
